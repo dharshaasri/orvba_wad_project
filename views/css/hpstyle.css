@@ -1,0 +1,19 @@
+body {
+    background-image: url("wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+}
+h1{
+    font-size: 150px;
+    background: -webkit-linear-gradient(#ea8731,rgb(201, 129, 47), #625858);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bolder;
+    margin-left: 50px;
+    letter-spacing: -10px;
+}

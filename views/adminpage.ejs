@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./IMG/favicon1.png" rel="icon">
+<title>ORVBA-Admin</title>
+<style>
+.sidenav {
+  height: 100%;
+  width: 220px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(43, 41, 41);
+  overflow-x: hidden;
+  padding-top: 25px;
+}
+input[type="text"] {
+            width: 84%; 
+            line-height: 3;
+            padding: 5px;
+            border-radius: 5px; 
+            background-color:rgba(43, 41, 41, 0.749);
+            color: white;
+        }
+input[type="text"]:hover{
+  border-color:bisque;
+}
+button {
+      width: 70px; 
+      padding: 5px;
+      align-items: center;
+      border-radius: 5px; 
+      background-color:rgba(243, 168, 111, 0.844);
+        }
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  color:white;
+  display: block;
+}
+
+.sidenav a:hover {
+  color:darksalmon;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('./IMG/projectbackblur.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-blend-mode:multiply;
+  background-color: rgba(246, 185, 139, 0.677);
+}
+.main {
+  margin-left: 160px; 
+  font-size: 28px; 
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.topnav {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:rgb(43, 41, 41);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align:right;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+#bookingdetails{
+  background-color:rgba(246, 185, 139, 0.677); ;
+}
+/* Change the color of links on hover */
+.topnav a:hover {
+  color:darksalmon;
+}
+button:hover{
+  background-color: #111;
+  color: white;
+}
+table {
+            width: 85%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color:rgba(43, 41, 41, 0.749);
+            color: white;
+        }
+        #logo img {
+            max-width: 80px; /* Adjust the size of the logo here */
+            height: auto;
+        }
+
+</style>
+</head>
+<body>
+<div class="sidenav">
+  <a href="/"><div id="logo">
+    <img src="./IMG/logo.png" alt="ORVBA Logo">
+</div></a>
+<a><button onclick="goBack()">BACK</button></a>
+<a> </a>
+    <a href="/mechdetails" id="mechdetails"><span>MECHANIC DETAILS</span></a><hr>
+    <a href="/custdetails" id="custdetails"><span>CUSTOMER DETAILS</span></a><hr>
+    <a href="/adminpage" id="bookingdetails"><span>BOOKING DETAILS</span></a><hr></div>
+  <div>
+  
+    <div class="topnav">
+      <a href="/logout"><span class="logout">LOGOUT</span></a>
+    </div></div>
+    <p style="color: black;text-align: center;font-size: xx-large;"><b> Welcome ADMIN</b></p>
+    <div class="w3-container" style="margin-left:18%">
+      <p style="background-color: antiquewhite;font-size: xx-large;">BOOKING DETAILS</p>
+      <table>
+        <thead>
+          <tr>
+            <!-- <th>ID</th> -->
+            <th>Mechanic Name</th>
+            <th>Phone Number</th>
+            <th>Vehicle Number</th>
+            <th>Booked Address</th>
+            <th>Booked Customer</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% bookings.forEach(function(bookings) { %>
+            <tr>
+
+              <td><%=bookings.mechname %></td>
+              <td><%=bookings.phno %></td>
+              <td><%=bookings.vehicleNumber %></td>
+              <td><%=bookings.currentAddress %></td>
+              <td><%=bookings.cusname%></td>
+              <td><%=bookings.status%></td>
+          <% }); %>
+          </tbody>
+        </table>
+      </div>
+      
+</body>
+
+<script>
+   function goBack() {
+       window.history.back();
+     }
+
+  
+  </script>
+</html> 
+ 

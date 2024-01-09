@@ -1,0 +1,80 @@
+<!-- login.ejs -->          
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./css/lsstyle.css">
+    <link href="./IMG/favicon.png" rel="icon">
+   
+    <style>
+        /* Style for the back button */
+        .back-button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+            height: 20%;
+            width: 15%;
+            background-color:rgba(43, 41, 41, 0.749) ;
+        }
+
+        .back-button:hover {
+            color: #007bff;
+            background-color: rgb(43, 41, 41); /* Change color on hover */
+        }
+        
+        /* Other styles */
+        body {
+            background-image: url('./IMG/projectbackblur.jpg');
+        }
+
+        h1,p {
+            text-align: center;
+        }
+    </style>
+    
+</head>
+
+<body class="container">
+    <!-- Back button (arrow symbol) -->
+    
+    <div>
+    <form id="adlogin" action="/adminlogin" method="post" style="align-items: center;">
+        <h1>ORVBA</h1> <p>onroad vehicle breakdown assistance system</p>
+        <a href="/login">User</a>
+        <div class="login">
+            <h1 class="title">Login to your account</h1>
+            <input class="fill" type="email" placeholder="Username" name="adminemail" id="adminemail" required autofocus /><br>
+            <input class="fill" type="password" placeholder="Password" name="adminpassword" id="adminpassword" required /><br>
+            <input type="hidden" name="signupType" id="signupType" value="">
+            <button type="submit" class="submit" id="login" >Login</button><br>
+            <a href="forgetpswd.html">Forget Password?</a><br>
+
+        </div>
+        <button class="back-button" onclick="goBack()" style="align-items:left;">&#8592;</button>
+
+    </form>
+</div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        // document.querySelector('a[href="/csignup"]').addEventListener('click', function() {
+        //     document.getElementById('signupType').value = 'customer';
+        // });
+
+        // document.querySelector('a[href="/msignup"]').addEventListener('click', function() {
+        //     document.getElementById('signupType').value = 'mechanic';
+        // });
+       
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script defer src="./js/adlogin.js  "></script>
+</body>
+</html>
+

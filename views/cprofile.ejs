@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./IMG/favicon1.png" rel="icon">
+  <title>ORVBA-Customer</title>
+    <style>
+       .sidenav {
+  height: 100%;
+  width: 220px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(43, 41, 41);
+  overflow-x: hidden;
+  padding-top: 25px;
+}
+input[type="text"] {
+            width: 84%; 
+            line-height: 3;
+            padding: 5px;
+            border-radius: 5px; 
+            background-color:rgba(43, 41, 41, 0.749);
+            color: white;
+        }
+input[type="text"]:hover{
+  border-color:bisque;
+}
+button {
+      width: 70px; 
+      padding: 5px;
+      align-items: center;
+      border-radius: 5px; 
+      background-color:rgba(243, 168, 111, 0.844);
+        }
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  color:white;
+  display: block;
+}
+
+.sidenav a:hover {
+  color:darksalmon;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('./IMG/projectbackblur.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-blend-mode:multiply;
+  background-color: rgba(246, 185, 139, 0.677);
+}
+.main {
+  margin-left: 160px; 
+  font-size: 28px; 
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.topnav {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:rgb(43, 41, 41);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align:right;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+#profile{
+  background-color:rgba(246, 185, 139, 0.677); ;
+}
+/* Change the color of links on hover */
+.topnav a:hover {
+  color:darksalmon;
+}
+button:hover{
+  background-color: #111;
+  color: white;
+}
+form {
+            width: 50%; /* Adjust the width as needed */
+            margin: auto;
+            box-shadow: #f2f2f2;
+            background-color: antiquewhite;
+            text-align: center;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            height:50%;
+        }
+
+        label {
+            padding: auto;
+            display: block;
+            margin-top: 10px;
+        }
+        .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+        input {
+            width: 10%;
+            padding: 8px;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        .fill{
+    margin: 2%;
+    margin-inline-start: auto;
+    width: 50%;
+    height: 50px;
+    border: solid 1px rgba(15, 14, 14, 0.878);
+    border-radius: 5px;
+    background-color:rgba(177, 104, 48, 0.192) ;
+    color: black;
+    text-indent: 5px;
+    font-weight: bold;
+    padding: auto;
+    font-size: small;
+}
+
+        button.update-btn {
+            width: 50%;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(243, 168, 111, 0.844);
+            color: white;
+            cursor: pointer;
+            height: 20%;
+            color: black;
+        }
+
+        button.update-btn:hover {
+            background-color: #111;
+            color: #f2f2f2;
+        }
+        #logo img {
+            max-width: 80px; /* Adjust the size of the logo here */
+            height: auto;
+        }
+ 
+    </style>
+</head>
+<body>
+    <div class="sidenav">
+      <a href="/"><div id="logo">
+        <img src="./IMG/logo.png" alt="ORVBA Logo">
+    </div></a>
+    <a><button onclick="goBack()">BACK</button></a>
+    <a> </a>
+     <a href="/cprofile" id="profile"><span>PROFILE</span></a><hr>
+     <a href="/Customer" id="findmechanic"><span>FIND MECHANIC</span></a><hr>
+     <a href="/bookinglist" id="bookings"><span>BOOKINGS</span></a><hr></div>
+     <div>
+      <div class="topnav">
+        <a href="/logout"><span class="logout">LOGOUT</span></a>
+      </div></div>
+        <div class="w3-container" style="margin-left:18%">
+        <p style="background-color: antiquewhite;font-size: xx-large;">Profile</p>
+        <div class="container">
+          <form id="profileForm" method="POST" action="/updateCustomerProfile">
+              <!-- Displayed fields -->
+              <% customers.forEach(function(customers) { %>
+              <label for="cusname">Full Name</label>
+              <input class="fill" type="text" id="cusname" name="cusname" value="<%=customers.cusname%>" readonly>
+              <label for="email">Email</label>
+              <input class="fill" type="text" id="email" name="email" value="<%=customers.email%>" readonly>
+              <label for="phno">Phone Number</label>
+              <input class="fill" type="text" id="phno" name="phno" value="<%=customers.phno%>" >
+              <label for="vehicleNumber">Vehicle Number</label>
+              <input class="fill" type="text" id="vehicle_number" name="vehicle_number" value="<%=customers.vehicle_number%>" >
+              <label for="vehicle_model">Vehicle Model</label>
+              <input class="fill" type="text" id="vehicle_model" name="vehicle_model" value="<%=customers.vehicle_model%>" >
+              <label for="address">Address</label>
+              <input class="fill" type="text" id="address" name="address" value="<%=customers.address%>">
+              <% }); %>
+              <!-- Update button -->
+              <button type="submit" class="update-btn">UPDATE</button>
+          </form>
+        <script>
+          function goBack() {
+       window.history.back();
+     }
+
+       </script>
+</body>
+</html>

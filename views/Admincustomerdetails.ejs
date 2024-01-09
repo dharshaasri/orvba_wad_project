@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.sidenav {
+  height: 100%;
+  width: 220px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 25px;
+}
+input[type="text"] {
+            width: 780px; 
+            padding: 5px;
+            border-radius: 5px; 
+            background-color:rgba(246, 153, 82, 0.603);
+        }
+button {
+      width: 70px; 
+      padding: 5px;
+      border-radius: 5px; 
+      background-color:rgba(246, 153, 82, 0.644);
+        }
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  color:white;
+  display: block;
+}
+
+.sidenav a:hover {
+  color:darksalmon;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main {
+  margin-left: 160px; 
+  font-size: 28px; 
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.topnav {
+  background-color: #333;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align:right;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  color:darksalmon;
+}
+button:hover{
+  background-color: #111;
+  color: white;
+}
+table {
+            width: 85%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color:burlywood;
+            color: white;
+        }table {
+      width: 80%;
+      border-collapse: separate;
+      border-spacing: 0 15px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 20px;
+      text-align: left;
+      border: none;
+      position: relative;
+    }
+
+    th {
+      background-color: #2C3E50;
+      color: white;
+      border-radius: 5px 5px 0 0;
+    }
+
+    td {
+      background-color: #ECF0F1;
+      border-radius: 0 0 5px 5px;
+    }
+
+    tbody tr:hover {
+      background-color: #D5D8DC;
+    }
+
+    td:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 10px;
+      height: 100%;
+      background-color: #2C3E50;
+      border-radius: 5px 0 0 5px;
+      display: none;
+    }
+
+    td:first-child:before {
+      display: block;
+    }
+
+
+</style>
+</head>
+<body>
+<div class="sidenav">
+    <a><button onclick="goBack()">BACK</button></a>
+    <a> </a>
+ <a href=""><span>MECHANIC AUTHORIZATION</span></a><hr>
+ <a href="Adminmechanicdetails.html"><span>MECHANIC DETAILS</span></a><hr>
+ <a href="Admincustomerdetails.html"><span>CUSTOMER DETAILS</span></a><hr>
+ <a href="Admin.html"><span>STATUS</span></a><hr></div>
+  <div style="margin-left:17%">
+  
+    <div class="topnav">
+      <a href=""><span class="logout">LOGOUT</span></a>
+    </div></div>
+    <p style="color: black;text-align: center;font-size: xx-large;"><b>ADMIN</b></p>
+    <p style="color: black;text-align: center;font-size: xx-large;"><b>CUSTOMER DETAILS</b></p>
+    <div class="w3-container" style="margin-left:25%">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Gender</th>
+                <th>Availability</th>
+                <th>Vehicle Preference</th>
+                <th>BOOKING</th>
+            </tr>
+            
+            
+        </table>
+      </div>
+      <script>
+         function goBack() {
+      window.history.back();
+    }
+    </script>  
+</body>
+</html> 
+ 
