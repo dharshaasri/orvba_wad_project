@@ -160,7 +160,6 @@ router.post('/login', async (req, res) => {
   }
 });
 
-
 const authenticateToken = async (req, res, next) => {
   const token = req.cookies.token;
 
